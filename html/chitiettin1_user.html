@@ -12,6 +12,7 @@
         <!-- ICON CSSS -->
     <link rel="stylesheet" href="../font/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/custom_css.css">
+    <script type="text/javascript" src="../js/script.js"></script>
     <style type="text/css">
     .img-thumbnail{
     padding: 0px;
@@ -41,7 +42,7 @@ hr {
     width: 100%;
 }
 label{
-  color: red;
+  color: black;
 }
 
     </style>
@@ -136,7 +137,7 @@ label{
           <h4 class="modal-title">Đăng nhập</h4>
         </div>
         <div class="modal-body">
-                                 <form action="../html/dadangnhap.html"  class="form-horizontal">
+                                 <form action="" method="post"  class="form-horizontal">
                                       <div class="form-group">
                                         
                                         <label for="email">Email:</label>
@@ -149,7 +150,8 @@ label{
                                       <div class="checkbox">
                                         <label><input type="checkbox">Nhớ đăng nhập</label>
                                       </div>
-                                      <button type="submit" class="btn btn-danger">Xác nhận</button>
+                                    <button type="button" onclick="admintwo()" class="btn btn-danger">Xác nhận</button>
+                                     <div class="alert alert-danger" style="visibility: hidden;" id="wrong">Tên email hoặc mật khẩu không đúng</div>
                                 </form>
 
 
@@ -185,43 +187,50 @@ label{
                                         <input type="text" class="form-control" id="keyword" placeholder="Nhập từ khóa">
                                       </div>
                                       <div class="form-group">
-                                        <label for="price">Giá </label>
+                                        <label for="food">Món ăn</label>
                                         <!-- <input type="password" class="form-control" id="pwd" placeholder="Nhập lại password"> -->
-                                        <select class="form-control" id="price">
-                                          <option> 1</option>
-                                           <option> 1</option>
-                                            <option> 1</option>
-                                             <option> 1</option>
+                                        <select class="form-control" id="food">
+                                <option>Ăn chay</option>
+                              <option>Buffet</option>
+                              <option>Thức ăn nhanh</option>
+                             <option> Cơm văn phòng</option>
+                               <option> Món nướng</option>
+                                 <option> Món ngọt</option>
+                             <option>Sang trọng</option>
                                         </select>
                                       </div>
                                       <div class="form-group">
-                                        <label for="place">Khu vực</label>
+                                        <label for="place">Địa điểm</label>
                                         <select class="form-control" id="place">
-                                            <option> hcm</option>
-                                            <option>hà nội</option>
+                                              <option>Hồ Chí Minh</option>
+                                              <option>Hà Nội</option>
+                                              <option>Tỉnh Khác</option>
+                                              <option>Quán ăn </option>
+                                               <option>Quán nhậu</option>
+                                               <option>Tiệc tận nơi</option>
+                                               <option>Vỉa hè</option>
                                         </select>
 
                                       </div>
                                        <div class="form-group">
-                                        <label for="like">Lượt yêu thích</label>
-                                        <select class="form-control" id="like">
-                                            <option> dưới 100</option>
-                                            <option>trên 1000</option>
+                                        <label for="drink">Đồ uống</label>
+                                        <select class="form-control" id="drink">
+                                                  <option>Cà phê</option>
+                                                    <option>Rượu</option>
+                                                    <option>Trà sữa</option>
+                                                    <option>Nước ngọt</option>
+                                                    <option>Bia</option>
                                         </select>
 
                                       </div>
-                                      <br><br>
                                       <div class="form-group">
-                                        <label for="soluong"> Số chỗ đặt</label>
+                                        <label for="soluong"> Số chỗ cần đặt</label>
                                           <input type="number" class="form-control" name="" id="soluong">
                                       </div>
 
                                      <div class="form-group">
                                      <label>Xu hướng</label><br>
-                                        <label class="radio-inline">
-                                          <input type="radio" name="check"> Nóng bỏng
-                                        </label>
-                                        <label class="radio-inline">
+                                          <label class="radio-inline">
                                           <input type="radio" name="check"> Mới
                                         </label>
                                         <label class="radio-inline">
@@ -237,8 +246,6 @@ label{
 <!-- 
 tình trạng (số chỗ còn lại)
 lượt yêu thích
-
-
  -->
 
 
@@ -343,30 +350,44 @@ lượt yêu thích
  <div class="col-sm-2 sidenav">
 <!-- ITEM 1 START -->
     <div class="list-group">
-                <a href="../index.html" data-toggle="collapse" class="list-group-item active">
+                <a href="./index.html" data-toggle="collapse" class="list-group-item active">
                   Danh mục
                 </a>
  
                
-                <a href="#danhmuc1" data-toggle="collapse" class="list-group-item text-left active">Ăn gì</a>
+
+
+                <a href="#danhmuc1" data-toggle="collapse" class="list-group-item text-left active">Món ăn </a>
                      <div class="list-group collapse" id="danhmuc1">
-                      <a href="../index.html" class="list-group-item text-left">Món ngon hằng ngày</a>
-                      <a href="../index.html" class="list-group-item text-left">Được yêu thích nhất trong tuần</a>
-                      <a href="../index.html" class="list-group-item text-left">Được yêu thích nhất trong tháng</a>
+                        <a href="../html/anchay.html" class="list-group-item text-left">Ăn chay</a>
+                        <a href="../html/buffet.html" class="list-group-item text-left">Buffet</a>
+                        <a href="../html/thucannhanh.html" class="list-group-item text-left">Thức ăn nhanh</a>
+                       <a href="../index.html" class="list-group-item text-left"> Cơm văn phòng</a>
+                         <a href="../index.html" class="list-group-item text-left"> Món nướng</a>
+                           <a href="../index.html" class="list-group-item text-left"> Món ngọt</a>
+                       <a href="../index.html" class="list-group-item text-left">Sang trọng</a>
+
+
                     </div>
                 <!-- <a href="#" class="list-group-item text-left active">Ở Đâu</a> -->
-                <a href="#danhmuc2" data-toggle="collapse" class="list-group-item text-left active">Ở đâu</a>
+                <a href="#danhmuc2" data-toggle="collapse" class="list-group-item text-left active">Đồ uống</a>
                      <div class="list-group collapse" id="danhmuc2">
+                     <a href="../index.html" class="list-group-item text-left">Cà phê</a>
+                      <a href="../index.html" class="list-group-item text-left">Rượu</a>
+                      <a href="../index.html" class="list-group-item text-left">Trà sữa</a>
+                      <a href="../index.html" class="list-group-item text-left">Nước ngọt</a>
+                      <a href="../index.html" class="list-group-item text-left">Bia</a>
+                    </div>
+                <!-- <a href="#" class="list-group-item text-left active">Sưu tập</a> -->
+                <a href="#danhmuc3" data-toggle="collapse" class="list-group-item text-left active">Địa điểm</a>
+                     <div class="list-group collapse" id="danhmuc3">
                       <a href="../index.html" class="list-group-item text-left">Hồ Chí Minh</a>
                       <a href="../index.html" class="list-group-item text-left">Hà Nội</a>
                       <a href="../index.html" class="list-group-item text-left">Tỉnh Khác</a>
-                    </div>
-                <!-- <a href="#" class="list-group-item text-left active">Sưu tập</a> -->
-                <a href="#danhmuc3" data-toggle="collapse" class="list-group-item text-left active">Sưu tập</a>
-                     <div class="list-group collapse" id="danhmuc3">
-                      <a href="../index.html" class="list-group-item text-left">Món ăn ngon</a>
-                      <a href="../index.html" class="list-group-item text-left">Đứng đầu mùa</a>
-                      <a href="../index.html" class="list-group-item text-left">Khu vực đông</a>
+                      <a href="../index.html" class="list-group-item text-left">Quán ăn </a>
+                       <a href="../index.html" class="list-group-item text-left">Quán nhậu</a>
+                       <a href="../index.html" class="list-group-item text-left">Tiệc tận nơi</a>
+                       <a href="../index.html" class="list-group-item text-left">Vỉa hè</a>
                     </div>
                 <!-- <a href="#" class="list-group-item text-left active">Bình luận</a> -->
                 <a href="#danhmuc4" data-toggle="collapse" class="list-group-item text-left active">Chia sẻ</a>
@@ -562,7 +583,7 @@ lượt yêu thích
    <br>
    <div class="">
         <a href="../html/giohang.html" class="btn btn-danger" role="button">Đặt chỗ</a>
-         <a href="../html/giohang.html" class="btn btn-danger" role="button">Lưu</a>
+         <a href="../html/luu.html" class="btn btn-danger" role="button">Lưu</a>
           <!-- <a href="../html/chitiettin1_admin.html" class="btn btn-danger" onclick="alert('Bạn phải là admin')" role="button">Admin</a> -->
    </div>
   
@@ -719,7 +740,7 @@ lượt yêu thích
         <img class="img-responsive" src="../images/im2.jpg" alt="">
         <div class="overlay">
            <h2>Chia Sẻ</h2>
-           <a class="info" href="#">Nhấn Vào</a>
+           <a class="info" href="#" onclick="alert('đã chia sẻ thành công');">Nhấn Vào</a>
         </div>
     </div>
 
